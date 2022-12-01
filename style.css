@@ -1,0 +1,233 @@
+style.css
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@300;400;500;600;700;900&family=Sacramento&family=Ubuntu:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Sacramento&family=Ubuntu:wght@300;400&display=swap');
+
+body {
+    background-color: #F5F5F5;
+    overflow-x: hidden;
+
+}
+
+
+.navbar {
+    /* overflow: hidden; */
+    /* background-color: #333; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    backdrop-filter: blur(7.9px) !important;
+    -webkit-backdrop-filter: blur(7.9px) !important;
+
+}
+
+.section {
+    padding: 2rem 3rem;
+    border-top: 1px solid #ddd;
+
+    transition: transform 1s, opacity 1s;
+}
+
+.video_para {
+    position: absolute;
+    color: white;
+    top: 55rem;
+    font-size: 100px;
+    left: 6rem;
+    font-family: sans-serif;
+}
+
+#video {
+    background-color: white;
+    border: 0;
+}
+
+.back {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* .logo {
+    position: absolute;
+    width: 120px;
+    height: 110px;
+    left: 46px;
+    top: 0px;
+} */
+
+.men {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+    text-transform: uppercase;
+
+    color: #000000;
+}
+
+.women {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+    text-transform: uppercase;
+
+    color: #000000;
+}
+
+.sign-in,
+.sign-up {
+    background: #FFFFFF !important;
+    box-shadow: 6px 2px 19px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 30px !important;
+    width: 100px;
+    margin-left: 5px !important;
+}
+
+.search1 {
+    background: #FFFFFF !important;
+    box-shadow: 6px 2px 19px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 30px !important;
+    width: 100px;
+}
+
+.search-input {
+    border-radius: 30px !important;
+}
+
+.jordan {
+    position: relative;
+    width: 331px;
+    height: 60px;
+    left: 10px;
+    top: 10px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    /* identical to box height */
+
+    text-transform: capitalize;
+
+    color: #000000;
+
+
+}
+
+.retro {
+    position: relative;
+    width: 331px;
+    height: 60px;
+    left: 5px;
+    top: 9px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 275;
+    font-size: 44px;
+    line-height: 66px;
+    text-transform: capitalize;
+
+    color: #901011;
+}
+
+.jordan-shoe {
+    position: absolute;
+    width: 530px;
+    height: 330px;
+    left: 580px;
+    top: 190px;
+    border-radius: 29px;
+    transform: rotate(-45deg);
+}
+
+.jordan-shoe2 {
+    position: absolute;
+    width: 530px;
+    height: 330px;
+    left: 600px;
+    top: 250px;
+    border-radius: 29px;
+    transform: rotate(-45deg);
+    filter: blur(121px);
+}
+
+.shop {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 58px;
+    text-transform: capitalize;
+    position: relative;
+    width: 331px;
+    height: 60px;
+    left: 1px;
+    top: 9px;
+    color: #000000;
+}
+
+.stick {
+    position: fixed;
+}
+
+.shoe-image {
+    width: 289px;
+    height: 289px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.main {
+    display: flex;
+}
+
+
+.shoe-div {
+    margin-top: 20px;
+    width: 100%;
+
+    padding: 10px !important;
+
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.filtericon {
+    width: 15px;
+    height: 15px;
+}
+
+.offcanvas {
+    width: 250px !important;
+}
+
+
+
+.filterside {
+    margin-top: 170px;
+    margin-left: 60px;
+    background: #FFFFFF !important;
+    box-shadow: 6px 2px 19px rgba(0, 0, 0, 0.1) !important;
+    outline: none !important;
+    color: black;
+    width: 100px;
+    font-family: sans-serif !important;
+    font-size: larger !important;
+
+
+}

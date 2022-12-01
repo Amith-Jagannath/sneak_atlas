@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sneakX</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle with Popper -->
+
+    <!-- <style type="text/tailwindcss">
+  @layer utilities {
+	.content-auto {
+	  content-visibility: auto;
+	}
+  }
+</style> -->
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg h5" id="navigation">
+      <div class="container-fluid">
+        <a class="navbar-brand pe-5" href="#"
+          ><img
+            class="logo"
+            src="images/sneakxlogo2.png"
+            width="200px"
+            height="120px"
+            alt="logo"
+        /></a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExampleXxl"
+          aria-controls="navbarsExampleXxl"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleXxl">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5" style="width: 200px">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">MEN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">WOMEN</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">SALE</a>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+              <a
+                class="nav-link active dropdown-toggle"
+                aria-current="page"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                SHOP
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="shop.html">NIKE</a></li>
+                <li><a class="dropdown-item" href="shop.html">PUMA</a></li>
+                <li><a class="dropdown-item" href="#">SKECHERS</a></li>
+                <li><a class="dropdown-item" href="shop.html">ADDIDAS</a></li>
+                <li><a class="dropdown-item" href="#">SPARX</a></li>
+                <li><a class="dropdown-item" href="#">REEBOK</a></li>
+                <li><a class="dropdown-item" href="#">CROCS</a></li>
+              </ul>
+            </li> -->
+            <form action="/shoes" method="post">
+              <button class="btn-light border-0 bg-transparent my-1">
+                Shop
+              </button>
+            </form>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link active dropdown-toggle"
+                aria-current="page"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                ACCESSORIES
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">SOLE PROTECTOR</a></li>
+                <li><a class="dropdown-item" href="#">SNEAKER CLEANSER</a></li>
+                <li><a class="dropdown-item" href="#">SNEAKER CRATES</a></li>
+              </ul>
+            </li>
+            <li>
+              <button
+                class="nav-item sign-in btn btn-outline-light text-secondary"
+              >
+                SIGN IN
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-item sign-up btn btn-outline-light text-secondary"
+              >
+                SIGN UP
+              </button>
+            </li>
+          </ul>
+          <form class="d-flex p-30px ms-5" role="search">
+            <input
+              class="search-input form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="search1 btn btn-outline-light text-secondary"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <div class="row" align="center" style="margin-bottom: 30rem">
+      <div class="col-lg-6">
+        <h1 class="jordan">Nike Air Jordan</h1>
+        <h1 class="retro">Retro High OG</h1>
+        <h1 class="shop">Shop Now To Grab It..!!</h1>
+      </div>
+      <div class="col-lg-6">
+        <img class="jordan-shoe2" src="images/jordan-removebg.png" alt="" />
+        <img
+          class="jordan-shoe"
+          src="images/jordan-removebg.png"
+          alt="jordan"
+        />
+      </div>
+    </div>
+    <!-- <section class="section" id="video">
+	<video autoplay loop muted plays-inline class="back">
+		<source src="images/pexels-tima-miroshnichenko-6390166.mp4" type="video/mp4">
+	  </video>
+	  <h2 class="vedio_para">"Get ready to feel your SOLE"</h2>
+</section> -->
+    <div style="top: 30rem">
+      <form action="/register" method="post">
+        <input type="text" name="username" />
+        <input type="email" name="email" />
+        <input type="password" name="password" />
+        <input type="text" name="number" />
+        <input type="submit" value="submit" />
+      </form>
+
+      <form action="/login" method="post">
+        <input type="email" name="email" />
+        <input type="password" name="password" />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+  </body>
+</html>
