@@ -1,4 +1,3 @@
-shop.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,13 +36,38 @@ shop.html
 				  SHOP
 				</a>
 				<ul class="dropdown-menu">
-				  <li><a class="dropdown-item" href="#">NIKE</a></li>
-				  <li><a class="dropdown-item" href="#">PUMA</a></li>
-				  <li><a class="dropdown-item" href="#">SKECHERS</a></li>
-				  <li><a class="dropdown-item" href="#">ADDIDAS</a></li>
-				  <li><a class="dropdown-item" href="#">SPARX</a></li>
-				  <li><a class="dropdown-item" href="#">REEBOK</a></li>
-				  <li><a class="dropdown-item" href="#">CROCS</a></li>
+				  <li>
+            
+           
+           <form id="form1" action="/nike" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form1').submit();" class="dropdown-item">NIKE</a>
+    <input type="hidden" name="mess"/>
+</form>
+          </li>
+				  <li><form id="form2" action="/puma" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form2').submit();" class="dropdown-item">PUMA</a>
+    <input type="hidden" name="mess"/>
+</form></li>
+				  <li><form id="form3" action="/skechers" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form3').submit();" class="dropdown-item">SKECHERS</a>
+    <input type="hidden" name="mess"/>
+</form></a></li>
+				  <li><form id="form4" action="/adidas" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form4').submit();" class="dropdown-item">ADIDAS</a>
+    <input type="hidden" name="mess"/>
+</form></li>
+				  <li><form id="form5" action="/sparx" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form5').submit();" class="dropdown-item">SPARX</a>
+    <input type="hidden" name="mess"/>
+</form></a></li>
+				  <li><form id="form6" action="/reebok" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form6').submit();" class="dropdown-item">REEBOK</a>
+    <input type="hidden" name="mess"/>
+</form></li>
+				  <li><form id="form7" action="/crocs" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form7').submit();" class="dropdown-item">CROCS</a>
+    <input type="hidden" name="mess"/>
+</form></li>
 				</ul>
 			  </li>
 			  <li class="nav-item dropdown">
@@ -61,8 +85,8 @@ shop.html
 				</li>
 			  <li><button class="nav-item sign-up btn btn-outline-light text-secondary ">SIGN UP</button></li>
 			</ul>
-			<form class="d-flex p-30px ms-5" role="search">
-			  <input class=" search-input form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			<form action="/search_box" class="d-flex p-30px ms-5" role="search" method="post">
+			  <input class=" search-input form-control me-2" type="search" placeholder="Search" aria-label="Search" name="shoe_name">
 			  <button class=" search1 btn btn-outline-light text-secondary" type="submit">Search</button>
 			</form>
 		  </div>
@@ -86,26 +110,18 @@ shop.html
             Gender
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Male
-                </label>
-              </div>
-            </a></li>
-            <li><a class="dropdown-item" href="#"><div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Female
-              </label>
-            </div></a></li>
-            <li><a class="dropdown-item" href="#"><div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Unisex
-              </label>
-            </div></a></li>
+            <li> <form id="form_male" action="/male" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form_male').submit();" class="dropdown-item">Male</a>
+    <input type="hidden" name="mess"/>
+</form></li>
+            <li><form id="form_female" action="/female" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form_female').submit();" class="dropdown-item">Female</a>
+    <input type="hidden" name="mess"/>
+</form></li>
+            <li><form id="form_unisex" action="/shoes" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form_unisex').submit();" class="dropdown-item">Unisex</a>
+    <input type="hidden" name="mess"/>
+</form></li>
           </ul>
         </div>
          <hr>
@@ -159,10 +175,14 @@ shop.html
               </div>
             </a></li>
             <li><a class="dropdown-item" href="#"><div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                NIKE
-              </label>
+               <form id="form_nike" action="/nike"></form>
+              {{!-- <input class="form-check-input" type="checkbox" value="" onChange="document.getElementById('form_nike').submit();"id="flexCheckDefault"> --}}
+             <input type="hidden" value="nike">
+             
+                {{!-- NIKE
+              </label> --}}
+              <input type="hidden" >
+              </form>
             </div></a></li>
             <li><a class="dropdown-item" href="#"><div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -172,6 +192,7 @@ shop.html
             </div></a></li>
             <li><a class="dropdown-item" href="#">
               <div class="form-check">
+                
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
                   SKECHERS
@@ -257,7 +278,8 @@ shop.html
     
       
     
-       <div class="shoe-div"> 
+       <di  
+       v class="shoe-div"> 
         <div class="row shoe_main " align="center"> 
         {{!-- <div class="col-lg-6">
          <img class="shoe-image" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/728d443c-e22e-4c91-b2a8-e5ea7722fd60/air-max-95-shoes-nv8gnV.png" alt="">
@@ -282,7 +304,7 @@ shop.html
         {{/each}}
         
         </div>
-    </div>
+    </di>
        
         
       

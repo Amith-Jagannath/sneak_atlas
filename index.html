@@ -84,10 +84,19 @@
                 <li><a class="dropdown-item" href="#">CROCS</a></li>
               </ul>
             </li> -->
-            <form action="/shoes" method="post">
+            <!-- <form action="/shoes" method="post">
               <button class="btn-light border-0 bg-transparent my-1">
                 Shop
               </button>
+            </form> -->
+            <form id="home_form" action="/shoes" method="post">
+              <a
+                href="javascript:;"
+                onclick="document.getElementById('home_form').submit(); "
+                class="nav-link active"
+                >SHOP</a
+              >
+              <input type="hidden" name="mess" />
             </form>
 
             <li class="nav-item dropdown">

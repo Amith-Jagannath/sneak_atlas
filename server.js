@@ -6,6 +6,7 @@ const { handlebars } = require("hbs");
 const cookieParser = require("cookie-parser"); //used to store cookies for user sessions
 const sessions = require("express-session");
 const oneDay = 1000 * 60 * 60 * 24;
+const path = __dirname + "/public/views";
 // mongoose
 //   .connect("mongodb://localhost:27017/SneakX", {
 //     useNewUrlParser: true,
@@ -37,14 +38,13 @@ mongoose
 const app = express();
 app.set("view engine", "hbs"); //view engine for handlebars page
 app.use(express.static(__dirname));
-const path = __dirname;
-console.log(path);
+// const path = __dirname;
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-var server_port = process.env.YOUR_PORT || process.env.PORT || 3012;
-
+var server_port = process.env.YOUR_PORT || process.env.PORT || 2480;
 console.log(server_port);
 app.use(
   sessions({
@@ -111,6 +111,7 @@ const CustomerSchema = new mongoose.Schema({
 });
 const Product = new mongoose.model("Product", ProductSchema);
 const Customer = new mongoose.model("Customer", CustomerSchema);
+// const Product_scrap = new mongoose.model("product_scrap");
 // const registerDetail = new mongoose.model("project", customerSchema);
 
 module.exports = { Product, Customer };
@@ -119,116 +120,88 @@ const createDoc = async () => {
   try {
     const result = await Product.insertMany([
       new Product({
-        product_id: 2,
-        name: "nike",
+        product_id: 16,
+        name: "sparx",
         gender: "male",
         images: {
-          img1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ffd71468-75b5-45bb-a3ec-78a510e16b7f/sb-zoom-blazer-mid-plus-skate-shoes-tMlr98.png",
-          img2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/2ec24c69-5583-43b1-bd9b-10ab754096fc/sb-zoom-blazer-mid-plus-skate-shoes-tMlr98.png",
-          img3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/4e300a8f-fd1a-446d-8d0f-31c84d7e17c7/sb-zoom-blazer-mid-plus-skate-shoes-tMlr98.png",
-          img4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1aff4c51-409b-4abc-b4d6-746b5c6ba7e4/sb-zoom-blazer-mid-plus-skate-shoes-tMlr98.png",
+          img1: "https://m.media-amazon.com/images/I/61dDl5SmqPL._UY695_.jpg",
+          img2: "https://m.media-amazon.com/images/I/71b2m6DMatL._UY695_.jpg",
+          img3: "https://m.media-amazon.com/images/I/71mJwirv7aL._UY695_.jpg",
+          img4: "https://m.media-amazon.com/images/I/61lxnwhLurL._UY695_.jpg",
         },
-        cost: " ₹8,695",
-        costInVal: 8695,
-        description: "Nike SB Zoom Blazer Mid Premium Plus",
+        cost: " ₹1,311",
+        costInVal: 1311,
+        description: "Sparx Mens Sx0379g Running Shoes",
       }),
       new Product({
-        product_id: 3,
-        name: "nike",
+        product_id: 17,
+        name: "sparx",
         gender: "male",
         images: {
-          img1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/316ba9d5-f036-45cb-8546-38126f91c838/air-more-uptempo-96-shoes-cSXb2N.png",
-          img2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/3aaa7aef-4dd2-4b08-ad9a-b64e0d8dbea4/air-more-uptempo-96-shoes-cSXb2N.png",
-          img3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b252167d-a10d-425b-9f5a-b5534b5f8d30/air-more-uptempo-96-shoes-cSXb2N.png",
-          img4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/dd73be60-9604-4254-bc91-345fb47b32d4/air-more-uptempo-96-shoes-cSXb2N.png",
+          img1: "https://m.media-amazon.com/images/I/81EQqPZZfML._UX695_.jpg",
+          img2: "https://m.media-amazon.com/images/I/81A7aUn2NFL._UY695_.jpg",
+          img3: "https://m.media-amazon.com/images/I/81tRrciH4TL._UX695_.jpg",
+          img4: "https://m.media-amazon.com/images/I/8115zQQMd0L._UX695_.jpg",
         },
-        cost: "  ₹15,995",
-        costInVal: 15995,
-        description: "Nike Air More Uptempo '96",
+        cost: "₹1,367",
+        costInVal: 1367,
+        description: "Sparx mens Sm-610 Sports Shoes",
       }),
       new Product({
-        product_id: 4,
-        name: "nike",
+        product_id: 18,
+        name: "adidas",
         gender: "male",
         images: {
-          img1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a4c6d47f-1057-400d-bc98-f5194d041a96/air-max-plus-se-shoes-LMv0R8.png",
-          img2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d2481c44-5c46-44c6-a74a-a4af2238d96e/air-max-plus-se-shoes-LMv0R8.png",
-          img3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/590f417c-606a-45ec-bd7e-de179c3a1d46/air-max-plus-se-shoes-LMv0R8.png",
-          img4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/171fe582-3f1f-4d27-af04-18025c2d3f27/air-max-plus-se-shoes-LMv0R8.png",
+          img1: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8d1d26e792fa4654b597ae32012603bd_9366/NMD_R1_Shoes_Black_GX6978_01_standard.jpg",
+          img2: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b2bc8a9245c74eb3908eae3201262106_9366/NMD_R1_Shoes_Black_GX6978_04_standard.jpg",
+          img3: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fa78923a44b147baaf60ae3201261257_9366/NMD_R1_Shoes_Black_GX6978_02_standard_hover.jpg",
+          img4: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d1548d3f9d384a81a775ae32012619b4_9366/NMD_R1_Shoes_Black_GX6978_03_standard.jpg",
         },
-        cost: " ₹15,995",
-        costInVal: 15995,
-        description: "Nike Air Max Plus SE",
+        cost: "11,299",
+        costInVal: 11299,
+        description: "",
       }),
       new Product({
-        product_id: 5,
-        name: "nike",
+        product_id: 19,
+        name: "adidas",
         gender: "male",
         images: {
-          img1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ac52ba43-3cff-4dce-ac1d-daf43e84dca1/air-max-plus-se-shoes-hH93Cl.png",
-          img2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/526d6f7f-e38f-488a-8b04-f11588c3c1bf/air-max-plus-se-shoes-hH93Cl.png",
-          img3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6aacc51b-a741-466a-b908-2fe4d84abb5f/air-max-plus-se-shoes-hH93Cl.png",
-          img4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/eaa175d5-79e2-4404-b0d5-b72c27b9db92/air-max-plus-se-shoes-hH93Cl.png",
+          img1: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cc685791576a4273ad5eaed701484af6_9366/NMD_R1_Shoes_Red_GX9888_01_standard.jpg",
+          img2: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/27bf77e4f5894286bd41aed701485ac1_9366/NMD_R1_Shoes_Red_GX9888_02_standard_hover.jpg",
+          img3: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/06908b61003d4e7bb2a6aed701486147_9366/NMD_R1_Shoes_Red_GX9888_03_standard.jpg",
+          img4: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/39d36024c85a4e6f82e2aed7014869f7_9366/NMD_R1_Shoes_Red_GX9888_04_standard.jpg",
         },
-        cost: " ₹15,995",
-        costInVal: 15995,
-        description: "Nike Air Max Plus SE5",
+        cost: "₹12,999",
+        costInVal: 12999,
+        description: "Men Original NMD_R1 SHOES",
       }),
       new Product({
-        product_id: 6,
-        name: "nike",
+        product_id: 20,
+        name: "adidas",
         gender: "male",
         images: {
-          img1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1fdaff44-67e1-4513-a10a-e8e78696e354/air-jordan-xxxvii-pf-basketball-shoes-rthNXn.png",
-          img2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/2fb5f15b-b721-487c-9163-04d50ed6f04f/air-jordan-xxxvii-pf-basketball-shoes-rthNXn.png",
-          img3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/184a3e9f-a49c-4169-9e6c-837f4a72317e/air-jordan-xxxvii-pf-basketball-shoes-rthNXn.png",
-          img4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/692fb279-9d1a-4f05-8152-d57e29132db4/air-jordan-xxxvii-pf-basketball-shoes-rthNXn.png",
+          img1: "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/f320dcd7a7f249319bf6aee500e3840b_9366/OZELLE_Cloudfoam_Lifestyle_Running_Shoes_Black_GX6768_01_standard.jpg",
+          img2: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8f79642b902b45f8bc73aee500e3cccb_9366/OZELLE_Cloudfoam_Lifestyle_Running_Shoes_Black_GX6768_04_standard.jpg",
+          img3: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ab1934da03f4417796d7aee500e3dc97_9366/OZELLE_Cloudfoam_Lifestyle_Running_Shoes_Black_GX6768_05_standard.jpg",
+          img4: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d064c77b2b4448cf9ccaaee500e3adfe_9366/OZELLE_Cloudfoam_Lifestyle_Running_Shoes_Black_GX6768_02_standard_hover.jpg",
         },
-        cost: "  ₹17,295",
-        costInVal: 17295,
-        description: "Air Jordan XXXVII PF",
+        cost: "₹7,599",
+        costInVal: 7599,
+        description: "",
       }),
       new Product({
-        product_id: 7,
-        name: "nike",
+        product_id: 21,
+        name: "adidas",
         gender: "male",
         images: {
-          img1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b56de370-c5b8-43d3-bbd1-e9c44f4ed247/air-jordan-6-retro-shoes-fjwJgW.png",
-          img2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/296d6cb2-b2e2-42a7-9265-8661efcef918/air-jordan-6-retro-shoes-fjwJgW.png",
-          img3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/285d16bf-dba4-4726-a62f-80b79f888fc3/air-jordan-6-retro-shoes-fjwJgW.png",
-          img4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4b5ae472-ff1e-4bfd-a47c-d46f73665a9e/air-jordan-6-retro-shoes-fjwJgW.png",
+          img1: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1dab1fe38f26418d9f01ae6f01792e5a_9366/Questar_Shoes_Blue_GY2261_01_standard.jpg",
+          img2: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/255e5498e5704f0f862fae6f017951ef_9366/Questar_Shoes_Blue_GY2261_04_standard.jpg",
+          img3: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c5d31f0e72e946ec819fae6f01795c88_9366/Questar_Shoes_Blue_GY2261_05_standard.jpg",
+          img4: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0b1edf53d237487783ccae6f01794081_9366/Questar_Shoes_Blue_GY2261_02_standard_hover.jpg",
         },
-        cost: " ₹18,395",
-        costInVal: 18395,
-        description: "Air Jordan 6 Retro",
-      }),
-      new Product({
-        product_id: 8,
-        name: "nike",
-        gender: "male",
-        images: {
-          img1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/728d443c-e22e-4c91-b2a8-e5ea7722fd60/air-max-95-shoes-nv8gnV.pnghttps://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/2d044915-0165-43a2-b57f-1acc42066263/acg-air-zoom-gaiadome-gore-tex-shoes-2t1Qbv.png",
-          img2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b65d3388-d106-4a7f-80e8-1afca840929b/acg-air-zoom-gaiadome-gore-tex-shoes-2t1Qbv.png",
-          img3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9a258e82-b361-4ab3-89b0-81f99bdfb15e/acg-air-zoom-gaiadome-gore-tex-shoes-2t1Qbv.png",
-          img4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1028e74e-fd9b-41ca-a941-478708d11a85/acg-air-zoom-gaiadome-gore-tex-shoes-2t1Qbv.png",
-        },
-        cost: "₹19,695",
-        costInVal: 19695,
-        description: "Nike ACG Air Zoom Gaiadome GORE-TEX",
-      }),
-      new Product({
-        product_id: 9,
-        name: "nike",
-        gender: "male",
-        images: {
-          img1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8c6c0164-318d-412c-8941-25f919fa7215/air-jordan-7-retro-sp-shoes-x5NMM9.png",
-          img2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/74de07bb-6e0b-4e8c-b010-5e3d87546d01/air-jordan-7-retro-sp-shoes-x5NMM9.png",
-          img3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/2953e005-badb-4a5e-8abc-3733edba8eb2/air-jordan-7-retro-sp-shoes-x5NMM9.png",
-          img4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9868ce17-8b96-478a-8c59-2ef247789954/air-jordan-7-retro-sp-shoes-x5NMM9.png",
-        },
-        cost: "  ₹20,295",
-        costInVal: 20295,
-        description: "Air Jordan 7 Retro SP",
+        cost: "₹7,999",
+        costInVal: 7999,
+        description: "",
       }),
     ]);
     console.log(result);
@@ -247,6 +220,7 @@ app.post("/shoes", async function (req, res) {
   const shoes_details = await Product.find({});
   //   res.send(shoes_details);
   // console.log(shoes_details);
+  console.log(shoes_details);
   res.render("shop", { info: shoes_details });
 });
 
@@ -322,5 +296,42 @@ app.post("/individualshoe", async function (req, res) {
   const val = req.body.product_id;
   const shoes_det = await Product.findOne({ product_id: val });
   console.log(shoes_det);
-  console.log(session.userid);
+  // console.log(session.userid);
+});
+console.log(path);
+app.post("/nike", async function (req, res) {
+  console.log("yes");
+  const nike = await Product.find({ name: "nike" });
+  console.log(nike);
+  res.render("shop", { info: nike });
+  // res.render(path + "/shop.hbs", { info: nike });
+  // res.send("nike");
+});
+
+app.post("/puma", async function (req, res) {
+  const puma = await Product.find({ name: "puma" });
+  res.render("shop", { info: puma });
+});
+app.post("/adidas", async function (req, res) {
+  const adidas = await Product.find({ name: "adidas" });
+  res.render("shop", { info: adidas });
+});
+app.post("/sparx", async function (req, res) {
+  const sparx = await Product.find({ name: "sparx" });
+  res.render("shop", { info: sparx });
+});
+
+app.post("/search_box", async function (req, res) {
+  const name = req.body.shoe_name.toLowerCase();
+  const shoes = await Product.find({ name: name });
+  res.render("shop", { info: shoes });
+});
+
+app.post("/male", async function (req, res) {
+  const male_shoe = await Product.find({ gender: "male" });
+  res.render("shop", { info: male_shoe });
+});
+app.post("/female", async function (req, res) {
+  const female_shoe = await Product.find({ gender: "female" });
+  res.render("shop", { info: female_shoe });
 });
